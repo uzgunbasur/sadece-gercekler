@@ -54,9 +54,23 @@ body{padding-top:58px}
 .nsec{background:linear-gradient(180deg,#141a3d,#1d2257 60%,#2a2a6b);color:#fff}
 .lab2{position:absolute;left:10px;top:10px;z-index:6;font-size:12px;color:#fff;background:rgba(0,0,0,.35);padding:4px 10px;border-radius:999px}
 #hbp{min-width:42px;text-align:right}
+
+body{background:transparent!important;padding-top:58px}
+#bgfx{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#fff1f2,#ece6ff)}
+.gate{display:none}
+.stage{height:380px}@media(min-width:768px){.stage{height:420px}}.stage.nh{height:300px}
+.nrow{display:flex;flex-direction:column;gap:16px;width:100%}@media(min-width:768px){.nrow{flex-direction:row}.nrow .stage{flex:1;min-width:0}}
+.lab2{position:absolute;left:10px;top:10px;z-index:6;font-size:12px;color:#fff;background:rgba(0,0,0,.4);padding:4px 10px;border-radius:999px}
+.ntx{max-width:640px;margin:28px auto 0;font-size:clamp(17px,3.4vw,21px);line-height:1.8;min-height:70px}
+#hbp{min-width:42px;text-align:right}
+.msg{color:#fff}
+.msg2{background:rgba(255,255,255,.93);color:#be123c;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(18px,4vw,26px);padding:18px 24px;border-radius:22px;box-shadow:0 0 40px rgba(251,113,133,.7)}
+.btn2{border:0;cursor:pointer;font:700 16px 'Quicksand',sans-serif;padding:14px 22px;border-radius:999px;width:100%;max-width:340px;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+.tipb{position:absolute;z-index:20;background:#fff;color:#4a2c3b;padding:8px 14px;border-radius:14px;font-size:14px;font-weight:600;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.3);pointer-events:none}
 </style>
 </head>
 <body>
+<div id="bgfx"></div>
 <div id="hb" class="fixed top-0 inset-x-0 z-50 px-3 sm:px-6" style="padding-top:calc(8px + env(safe-area-inset-top,0px));padding-bottom:8px;background:linear-gradient(rgba(20,10,40,.88),rgba(20,10,40,.6));backdrop-filter:blur(8px)">
   <div class="max-w-[900px] mx-auto">
     <div class="flex items-center justify-between text-[12px] sm:text-sm font-semibold mb-1" style="color:#ffe4ef"><span class="flex items-center gap-2"><svg width="16" height="14" viewBox="0 0 100 90"><use href="#hrt"/></svg>Mutluluk &amp; Huzur Seviyesi</span><span id="hbp">10%</span></div>
@@ -65,24 +79,19 @@ body{padding-top:58px}
 </div>
 <svg width="0" height="0" style="position:absolute"><defs><radialGradient id="hg" cx=".35" cy=".3"><stop offset="0" stop-color="#ff8a9b"/><stop offset="1" stop-color="#dc143c"/></radialGradient><symbol id="hrt" viewBox="0 0 100 90"><path d="M50 85C10 55 0 35 0 22 0 8 12 0 25 0 36 0 45 6 50 15 55 6 64 0 75 0 88 0 100 8 100 22 100 35 90 55 50 85Z" fill="url(#hg)"/><ellipse cx="26" cy="20" rx="9" ry="5" fill="#fff" opacity=".5" transform="rotate(-30 26 20)"/></symbol></defs></svg>
 
-<header id="intro" class="scene" style="min-height:60vh;display:flex;align-items:center;justify-content:center">
-  <h1 id="title" class="serif" style="font-style:italic;font-size:clamp(26px,6.5vw,50px);line-height:1.35">Sude, birbirimize ne kadar iyi geldiğimizi görmüşsündür...</h1>
-</header>
-
-<section class="scene" style="padding-top:10px">
-  <div id="cards" class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
-    <div class="card"><i></i>Düzenli Uyku</div><div class="card"><i></i>Zihinsel Rahatlama</div><div class="card"><i></i>Mutluluk Hormonu</div>
-  </div>
+<header id="intro" class="scene" style="padding-top:40px">
+  <div class="card" style="max-width:720px;margin:0 auto 44px;font-weight:400;text-align:left;color:#4a2c3b;padding:26px 22px"><p class="tx serif" style="font-size:clamp(16px,3.2vw,20px);line-height:1.85" data-t="Sude, sen şu an yalnız kalmak istiyorsun (istemeden istiyorsun bence de neyse) biliyorum ama sen kötü günündeyken kenara çekilip bekleyip iyileştikten sonra sana gelmem çok saçma olur. Bana soracak olursan el ele verip sarıp sarmalayıp her şeyi beraber aşabiliriz, ben inanıyorum."></p></div>
+  <h1 id="title" class="serif" style="font-style:italic;font-size:clamp(26px,6.5vw,48px);line-height:1.35;margin-bottom:34px">Sude, birbirimize ne kadar iyi geldiğimizi görmüşsündür...</h1>
+  <div id="cards" class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full"><div class="card"><i></i>Düzenli Uyku</div><div class="card"><i></i>Zihinsel Rahatlama</div><div class="card"><i></i>Mutluluk Hormonu</div></div>
   <p id="hint" class="cap" style="margin-top:32px">Hikayeyi görmek için aşağı kaydır<svg width="28" height="20" viewBox="0 0 28 20" style="display:block;margin:6px auto 0"><path d="M4 5l10 10L24 5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></p>
-</section>
+</header>
 
 <section id="s1" class="scene">
   <div class="tag reveal">1. Gün · Uçuş</div><h2 class="reveal">Pist ve gökyüzü</h2>
   <div class="reveal w-full">
-    <div class="stage h-[380px] md:h-[420px]" id="st1">
+    <div class="stage" id="st1">
       <div id="mk" class="abs" style="right:5%;top:7%;width:72px;z-index:2"><svg viewBox="-40 -40 80 90" width="100%"><circle id="pulse" r="22" cy="-2" fill="#fb7185" opacity=".3"/><path d="M0 -26C-14 -26 -20 -12 -14 0L0 20L14 0C20 -12 14 -26 0 -26Z" fill="#e11d48"/><circle cy="-10" r="5" fill="#fff"/><text y="40" text-anchor="middle" font-family="Quicksand,sans-serif" font-weight="700" font-size="14" fill="#1e3a5f">İstanbul</text></svg></div>
-      <div id="stairs1" class="abs" style="inset:0;z-index:2"></div>
-      <div id="plane1" class="abs" style="z-index:3"></div>
+      <div id="stairs1" class="abs" style="inset:0;z-index:2"></div><div id="plane1" class="abs" style="z-index:3"></div>
       <div class="ch" id="enes1" data-c="e" data-d="1" style="z-index:4"></div>
     </div>
     <div class="flex flex-col sm:flex-row gap-3 justify-center mt-6"><button id="b-board" class="btn">Uçağa Bindir</button><button id="b-fly" class="btn" disabled>İstanbul’a Uç</button></div>
@@ -93,73 +102,67 @@ body{padding-top:58px}
 <section id="s2" class="scene">
   <div class="tag reveal">1. Gün · Kafe</div><h2 class="reveal">Buluşma</h2>
   <div class="reveal w-full">
-    <div class="stage h-[380px] md:h-[420px]" id="st2">
-      <div class="ch" id="sude3" data-c="s" data-d="1" style="z-index:3"></div>
-      <div class="ch" id="enes3" data-c="e" data-d="-1" style="z-index:3"></div>
-    </div>
+    <div class="stage" id="st2"><div class="ch" id="sude3" data-c="s" data-d="1" style="z-index:3"></div><div class="ch" id="enes3" data-c="e" data-d="-1" style="z-index:3"></div></div>
     <div class="flex flex-col sm:flex-row gap-3 justify-center mt-6"><button id="b-hug" class="btn">Sarıl</button></div>
     <p id="cap2" class="cap">Sude’nin kafası karmakarışık...</p>
   </div>
 </section>
 
-<section id="n1" class="nsec">
-  <div class="scene" style="padding-top:60px;padding-bottom:60px">
-    <div class="tag reveal" style="color:#c7d2fe">1. Gün · Gece</div><h2 class="reveal" style="color:#fff">İlk huzurlu uyku</h2>
-    <div class="reveal nrow"><div class="stage nh" id="n1s"></div><div class="stage nh" id="n1e"></div></div>
-    <p id="tn1" class="serif" style="max-width:640px;margin:28px auto 0;font-size:clamp(17px,3.4vw,21px);line-height:1.8;color:#fff;min-height:90px"></p>
-  </div>
-</section>
+<section id="n1" class="scene"><div class="tag reveal">1. Gece</div><h2 class="reveal">İlk huzurlu uyku</h2>
+<div class="reveal nrow"><div class="stage nh" id="n1s"></div><div class="stage nh" id="n1e"></div></div>
+<p class="tx serif ntx" data-t="İlk gece... Kafandaki karmaşa gidince mışıl mışıl uyudun."></p></section>
 
 <section id="s3" class="scene">
-  <div class="tag reveal">2. Gün · Boğaz</div><h2 class="reveal">Sahilde yürüyüş</h2>
+  <div class="tag reveal">2. Gün · Boğaz</div><h2 class="reveal">Kalpleri Yakala</h2>
   <div class="reveal w-full">
-    <div class="stage h-[380px] md:h-[420px]" id="st3">
-      <div class="ch" id="sudeB" data-c="s" data-d="1" style="z-index:3"></div>
-      <div class="ch" id="enesB" data-c="e" data-d="1" style="z-index:3"></div>
+    <div class="stage" id="st3">
+      <div class="ch" id="sudeB" data-c="s" data-d="1" style="z-index:3"></div><div class="ch" id="enesB" data-c="e" data-d="1" style="z-index:3"></div>
+      <div id="gc" class="lab2" style="left:auto;right:10px;font-size:14px;font-weight:700">Kalpler: 0/10</div>
+      <div id="gm" class="abs" style="inset:0;display:none;align-items:center;justify-content:center;z-index:30;text-align:center;padding:16px"><div class="msg2">Harikasın, tüm sevgiyi topladın!</div></div>
     </div>
-    <div class="flex flex-col sm:flex-row gap-3 justify-center mt-6"><button id="b-walk" class="btn">Sahilde Gez</button></div>
-    <p id="cap3" class="cap">Boğaz’da güzel bir gün.</p>
+    <p id="cap3" class="cap">Düşen kalplere dokun, 10 kalp topla; hikâyenin devamı açılsın.</p>
   </div>
 </section>
 
-<section id="n2" class="nsec">
-  <div class="scene" style="padding-top:60px;padding-bottom:60px">
-    <div class="tag reveal" style="color:#c7d2fe">2. Gün · Gece</div><h2 class="reveal" style="color:#fff">Derin huzur</h2>
-    <div class="reveal nrow"><div class="stage nh" id="n2s"></div><div class="stage nh" id="n2e"></div></div>
-    <p id="tn2" class="serif" style="max-width:640px;margin:28px auto 0;font-size:clamp(17px,3.4vw,21px);line-height:1.8;color:#fff;min-height:90px"></p>
-  </div>
-</section>
+<div id="gA" class="gate">
+<section id="n2" class="scene"><div class="tag reveal">2. Gece</div><h2 class="reveal">Ne giysem?</h2>
+<div class="reveal w-full"><div class="stage" id="st5"></div></div>
+<p class="tx serif ntx" data-t="İkinci gece... Tek derdin ‘Yarın Enes’in yanına giderken ne giyeceğim?’ tatlı telaşı oldu."></p></section>
 
-<section id="s4" class="scene">
-  <div class="tag reveal">3. Gün · Veda</div><h2 class="reveal">Gün batımında havalimanı</h2>
+<section id="s6" class="scene"><div class="tag reveal">3. Gün · Park</div><h2 class="reveal">Stres bulutları</h2>
+<p class="tx serif ntx" style="margin:0 auto 20px;min-height:40px" data-t="İçinde kalan son stres kırıntılarını da birlikte patlatalım!"></p>
+<div class="reveal w-full"><div class="stage" id="st6">
+  <div class="ch" id="sudeP" data-c="s" data-d="1" style="z-index:3"></div><div class="ch" id="enesP" data-c="e" data-d="-1" style="z-index:3"></div>
+  <div id="gc6" class="lab2" style="left:auto;right:10px;font-size:14px;font-weight:700">Bulut: 0/4</div></div>
+  <p id="cap6" class="cap">Karanlık bulutlara dokun!</p></div></section>
+</div>
+
+<div id="gB" class="gate">
+<section id="n3" class="scene"><div class="tag reveal">3. Gece</div><h2 class="reveal">Hat açık, uyku derin</h2>
+<div class="reveal nrow"><div class="stage nh" id="n3s"></div><div class="stage nh" id="n3e"></div></div>
+<p class="tx serif ntx" data-t="Üçüncü gece... Benimle görüntülü konuşurken huzurla uyuya kaldın."></p></section>
+
+<section id="s8" class="scene">
+  <div class="tag reveal">4. Gün · Veda</div><h2 class="reveal">Gün batımında havalimanı</h2>
   <div class="reveal w-full">
-    <div class="stage h-[380px] md:h-[420px]" id="st4">
-      <div id="stairs4" class="abs" style="inset:0;z-index:2"></div>
-      <div id="plane4" class="abs" style="z-index:3"></div>
-      <div class="ch" id="sude4" data-c="s" data-d="1" style="z-index:4"></div>
-      <div class="ch" id="enes4" data-c="e" data-d="-1" style="z-index:4"></div>
-    </div>
+    <div class="stage" id="st4"><div id="stairs4" class="abs" style="inset:0;z-index:2"></div><div id="plane4" class="abs" style="z-index:3"></div>
+      <div class="ch" id="sude4" data-c="s" data-d="1" style="z-index:4"></div><div class="ch" id="enes4" data-c="e" data-d="-1" style="z-index:4"></div></div>
     <div class="flex flex-col sm:flex-row gap-3 justify-center mt-6"><button id="b-home" class="btn">Eve Dön</button></div>
     <p id="cap4" class="cap">Gün batıyor. Vedalaşma vakti.</p>
   </div>
 </section>
 
-<section id="s5" class="night">
-  <div id="stars"></div>
-  <div class="scene" style="position:relative;padding-bottom:170px">
-    <div class="tag reveal" style="color:#c7d2fe">3. Gün · Gece</div><h2 class="reveal">Görüntülü arama</h2>
-    <div class="reveal w-full">
-      <div id="call" class="relative flex flex-col md:flex-row items-center justify-center gap-10 md:gap-28 py-6 glow2" style="border-radius:28px">
-        <div class="phone" id="ph1" style="--g:#fb7185"><div class="notch"></div><div class="lab">Sude</div><div class="screen abs" style="inset:0" id="scr1"></div><div class="pch" id="pch1"></div><div class="cov"><div class="rg"></div><div class="rg"></div>Aranıyor...</div></div>
-        <div class="phone" id="ph2" style="--g:#60a5fa"><div class="notch"></div><div class="lab">Enes</div><div class="screen abs" style="inset:0" id="scr2"></div><div class="pch" id="pch2"></div><div class="cov"><div class="rg"></div><div class="rg"></div>Aranıyor...</div></div>
-      </div>
-      <div class="flex justify-center mt-6"><button id="b-call" class="btn w-full sm:w-auto">Görüntülü Ara</button></div>
-      <p id="callText" class="serif" style="max-width:640px;margin:30px auto 0;font-size:clamp(17px,3.4vw,21px);line-height:1.8;min-height:120px"></p>
-    </div>
-    <div class="msg reveal" id="msg"><svg class="glow" id="h5" width="44" height="40" viewBox="0 0 100 90" style="margin:0 auto 10px;display:block"><use href="#hrt"/></svg>Lütfen artık hayır deme. Gelmeme izin ver. Doğrudan yarın kalkıp kapına gelmeyeceğim zaten, ama bana gelmem için bir şans, bir izin ver...</div>
-  </div>
-  <div id="sky" style="position:absolute;left:0;right:0;bottom:0;height:120px"></div>
+<section id="s9" class="scene" style="position:relative;overflow:hidden;padding-bottom:120px">
+  <div id="amb" class="abs" style="inset:0;pointer-events:none"></div>
+  <div class="tag reveal" style="position:relative">Son söz</div><h2 class="reveal" style="position:relative">Bir adım</h2>
+  <div class="msg reveal" id="msg" style="position:relative"><svg class="glow" id="h5" width="44" height="40" viewBox="0 0 100 90" style="margin:0 auto 12px;display:block"><use href="#hrt"/></svg>
+    <div id="msgbody"><p class="tx" data-t="Lütfen artık hayır deme. İstersen şimdi gelmem, doğrudan arkadaşının nişanında gelirim... Ama ikimiz de biliyoruz ki orada ablan olacak ve yan yana gelmemiz, baş başa rahatça konuşmamız imkansız gibi bir şey olacak. O yüzden bana şimdi, her şeyden uzak bir şans, bir izin ver. Yarın sabah hemen kapına dayanmayacağım zaten, sadece bana bir adım at..."></p>
+    <p class="tx" style="margin-top:16px;font-style:normal;font-weight:600;color:#fecdd3" data-t="Çabamı görmemezlikten gelme seni çok seviyorum."></p></div></div>
+  <div id="res" class="serif" style="position:relative;min-height:44px;margin-top:24px;font-size:clamp(20px,4vw,28px);color:#fde68a;text-shadow:0 0 18px rgba(253,230,138,.6)"></div>
+  <div class="flex flex-col items-center gap-3 mt-6" style="position:relative"><button id="b-yes" class="btn2" style="background:#22c55e;color:#fff">Tamam, Enes gel</button><button id="b-think" class="btn2" style="background:#facc15;color:#422006">Biraz daha konuşalım, düşünelim</button></div>
+  <div id="arena" style="position:relative;min-height:230px;margin-top:14px;width:100%;display:flex;justify-content:center;align-items:flex-start"><button id="b-no" class="btn2" style="background:#ef4444;color:#fff">Hayır, istemiyorum</button></div>
 </section>
+</div>
 <script>
 gsap.registerPlugin(ScrollTrigger);
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],R=(a,b)=>a+Math.random()*(b-a);
@@ -172,8 +175,6 @@ function person(o,d){
   return `<svg viewBox="0 0 100 220"><g class="lL">${leg(35)}</g><g class="lR">${leg(52)}</g><rect class="top" x="31" y="68" width="38" height="60" rx="14" fill="${o.top}"/><rect x="31" y="116" width="38" height="14" rx="5" fill="${o.pants}"/><g class="aL">${arm(24)}</g><g class="aR">${arm(65)}</g><rect x="44" y="58" width="12" height="14" fill="${o.skin}"/><circle cx="50" cy="42" r="20" fill="${o.skin}"/><circle cx="30" cy="44" r="4" fill="${o.skin}"/><circle cx="70" cy="44" r="4" fill="${o.skin}"/><path d="${hair}" fill="${o.hc}"/><circle cx="${43+d*3}" cy="44" r="2.3" fill="#222"/><circle cx="${57+d*3}" cy="44" r="2.3" fill="#222"/><path d="M${44+d*2} 52Q${50+d*2} 57 ${56+d*2} 52" fill="none" stroke="#a24b4b" stroke-width="2" stroke-linecap="round"/>${o.f?'<circle cx="37" cy="51" r="4" fill="#f9a8b8" opacity=".5"/><circle cx="63" cy="51" r="4" fill="#f9a8b8" opacity=".5"/>':''}</svg>`;
 }
 
-$$('.ch,.pch').forEach(el=>{if(el.dataset.c)el.innerHTML=person(CH[el.dataset.c],+el.dataset.d||0)});
-$('#pch1').innerHTML=person(CH.s,0);$('#pch2').innerHTML=person(CH.e,0);
 function walk(el){
   const t=[],q=s=>el.querySelector(s),p=(s,o,a,b)=>t.push(gsap.fromTo(q(s),{rotation:a,svgOrigin:o},{rotation:b,duration:.3,yoyo:true,repeat:-1,ease:'sine.inOut'}));
   p('.lL','42 124',-26,26);p('.lR','58 124',26,-26);p('.aL','29 78',22,-22);p('.aR','70 78',-22,22);
@@ -225,34 +226,100 @@ function fh(host,x,y,sz,rise){const h=document.createElement('div');h.className=
   gsap.fromTo(h,{opacity:0,scale:.4},{opacity:1,scale:1,duration:.4});gsap.to(h,{y:-rise,x:R(-30,30),duration:R(1.8,2.6),ease:'power1.out'});gsap.to(h,{opacity:0,delay:1.4,duration:.8,onComplete:()=>h.remove()})}
 const wave=el=>{const a=el.querySelector('.aR');return gsap.timeline().to(a,{rotation:-140,svgOrigin:'70 78',duration:.4}).to(a,{rotation:-168,duration:.28,yoyo:true,repeat:-1,ease:'sine.inOut'})};
 const run={};
-
-/* ---------- build ---------- */
-const st1=$('#st1'),stC=$('#st2'),stB=$('#st3'),st4=$('#st4');
+$$('.ch').forEach(el=>{if(el.dataset.c)el.innerHTML=person(CH[el.dataset.c],+el.dataset.d||0)});
+const bgPark=()=>{let t='',f='';[[110,1],[640,1.1],[330,.8]].forEach(([x,k])=>t+=`<g transform="translate(${x} 300) scale(${k})"><rect x="-8" y="-70" width="16" height="70" fill="#7a5230"/><circle cy="-95" r="48" fill="#3f9b5a"/><circle cx="-28" cy="-78" r="30" fill="#4aae68"/><circle cx="30" cy="-80" r="32" fill="#35895a"/></g>`);
+for(let i=0;i<22;i++)f+=`<circle cx="${R(0,760)}" cy="${R(318,372)}" r="3.5" fill="${['#f472b6','#fde047','#fff','#a78bfa'][i%4]}"/>`;
+return SV(`<defs><linearGradient id="pk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ec8f0"/><stop offset="1" stop-color="#e8f7d8"/></linearGradient></defs><rect width="760" height="300" fill="url(#pk)"/><circle cx="620" cy="70" r="56" fill="#ffe27a" opacity=".25"/><circle cx="620" cy="70" r="34" fill="#ffe27a"/>${cloud(150,60,.9)}<path d="M0 300Q180 250 380 285T760 270V380H0Z" fill="#8fd18f"/><rect y="300" width="760" height="80" fill="#6cc070"/>${t}<path d="M0 360Q380 330 760 360" stroke="#e8d8b0" stroke-width="22" fill="none" opacity=".7"/><rect x="480" y="296" width="90" height="6" fill="#8b5a3c"/><rect x="480" y="316" width="90" height="8" fill="#8b5a3c"/><rect x="486" y="324" width="6" height="22" fill="#6b4630"/><rect x="558" y="324" width="6" height="22" fill="#6b4630"/>${f}`)};
+const st1=$('#st1'),stC=$('#st2'),stB=$('#st3'),st4=$('#st4'),st5=$('#st5'),stP=$('#st6');
 st1.insertAdjacentHTML('afterbegin',bg1());$('#plane1').innerHTML=planeSvg();
 stC.insertAdjacentHTML('afterbegin',bgCafe());stB.insertAdjacentHTML('afterbegin',bgBos());
-st4.insertAdjacentHTML('afterbegin',bgSun());$('#plane4').innerHTML=planeSvg();
-$('#scr1').innerHTML=room('#ffd6e4','#d9a77a','<circle cx="41" cy="92" r="10" fill="#fbcfe8"/><path d="M24 122Q41 100 58 122Z" fill="#a7f3d0"/><path d="M20 270h34l-4-26h-26z" fill="#c2693f"/><ellipse cx="37" cy="236" rx="16" ry="14" fill="#3f9b5a"/>');
-$('#scr2').innerHTML=room('#cfe3ff','#b88b60','<path d="M20 120h36M24 100h28" stroke="#5b3a29" stroke-width="5"/><rect x="14" y="196" width="70" height="6" fill="#5b3a29"/><rect x="20" y="170" width="8" height="26" fill="#e11d48"/><rect x="30" y="176" width="8" height="20" fill="#2563eb"/><rect x="40" y="168" width="8" height="28" fill="#16a34a"/>');
-const s3=$('#sude3'),e3=$('#enes3'),sb=$('#sudeB'),eb=$('#enesB'),s4=$('#sude4'),e4=$('#enes4');
-const e1=$('#enes1'),pl1=$('#plane1'),pl4=$('#plane4'),mk=$('#mk');
+st4.insertAdjacentHTML('afterbegin',bgSun());$('#plane4').innerHTML=planeSvg();stP.insertAdjacentHTML('afterbegin',bgPark());
+const s3=$('#sude3'),e3=$('#enes3'),sb=$('#sudeB'),eb=$('#enesB'),s4=$('#sude4'),e4=$('#enes4'),sP=$('#sudeP'),eP=$('#enesP'),e1=$('#enes1'),pl1=$('#plane1'),pl4=$('#plane4'),mk=$('#mk');
 let D1,b1,D4,b4;
-function L1(){const g=G(st1);D1=plane(pl1,st1,false);b1=stairs($('#stairs1'),D1.door,g.gy);put(e1,34,g.gy,D1.sc)}
-function L2(){const g=G(stC),x=Math.max(g.W*.22,88);put(s3,x,g.gy);put(e3,g.W-x,g.gy)}
-function L3(){const g=G(stB);put(sb,-50,g.gy);put(eb,12,g.gy)}
-function L4(){const g=G(st4),x=Math.max(g.W*.16,50);D4=plane(pl4,st4,true);b4=stairs($('#stairs4'),D4.door,g.gy);put(s4,x,g.gy);put(e4,x+62,g.gy)}
-L1();L2();L3();L4();
-addEventListener('resize',()=>{if(!run.a)L1();if(!run.b)L2();if(!run.c)L3();if(!run.d)L4()});
+function L1(){if(!st1.clientWidth)return;const g=G(st1);D1=plane(pl1,st1,false);b1=stairs($('#stairs1'),D1.door,g.gy);put(e1,34,g.gy,D1.sc)}
+function L2(){if(!stC.clientWidth)return;const g=G(stC),x=Math.max(g.W*.22,88);put(s3,x,g.gy);put(e3,g.W-x,g.gy)}
+function L3(){if(!stB.clientWidth)return;const g=G(stB);put(sb,-50,g.gy);put(eb,12,g.gy)}
+function L4(){if(!st4.clientWidth)return;const g=G(st4),x=Math.max(g.W*.16,50);D4=plane(pl4,st4,true);b4=stairs($('#stairs4'),D4.door,g.gy);put(s4,x,g.gy);put(e4,x+62,g.gy)}
+
+/* ---------- Faces, bubbles, night rooms ---------- */
+const bedSvg=w=>{const s=w=='s';return `<svg viewBox="0 0 230 110" width="230" height="110" style="display:block"><rect x="2" y="${s?16:6}" width="12" height="${s?94:104}" rx="3" fill="${s?'#8b5a3c':'#475569'}"/><rect x="0" y="64" width="230" height="26" rx="4" fill="${s?'#9a6340':'#334155'}"/><rect x="6" y="88" width="8" height="22" fill="${s?'#7a4a2e':'#1e293b'}"/><rect x="216" y="88" width="8" height="22" fill="${s?'#7a4a2e':'#1e293b'}"/><rect x="10" y="48" width="210" height="22" rx="8" fill="${s?'#f5ece4':'#f8fafc'}"/><rect x="14" y="36" width="50" height="20" rx="10" fill="#fff"/></svg>`};
+const blSvg=w=>{const s=w=='s',a=s?'#f472b6':'#64748b',b=s?'#ec4899':'#475569';return `<svg viewBox="0 0 230 110" width="230" height="110" style="display:block"><path d="M66 36Q72 28 96 30L214 33Q228 35 228 50V74H66Z" fill="${a}"/><path d="M66 36Q72 28 96 30L110 74H66Z" fill="${b}"/><path d="M150 32V74M190 33V74" stroke="#fff" stroke-width="3" opacity=".5"/></svg>`};
+
+const face=(k,sl)=>{const o=CH[k],hr=o.f?'M27 52C19 14 38 7 50 7C64 7 81 14 73 52L68 53C68 37 62 28 50 28C38 28 32 37 32 53Z':'M29 40C26 15 41 8 52 10C67 12 76 21 71 40C67 29 58 25 48 27C40 30 34 31 29 40Z';
+  return `<circle cx="30" cy="44" r="4" fill="${o.skin}"/><circle cx="70" cy="44" r="4" fill="${o.skin}"/><circle cx="50" cy="42" r="20" fill="${o.skin}"/><path d="${hr}" fill="${o.hc}"/>${sl?'<path d="M40 44q3 3 6 0M54 44q3 3 6 0" stroke="#222" stroke-width="1.8" fill="none" stroke-linecap="round"/>':'<circle cx="43" cy="44" r="2.3" fill="#222"/><circle cx="57" cy="44" r="2.3" fill="#222"/>'}<path d="M43 51Q50 58 57 51" fill="none" stroke="#a24b4b" stroke-width="2" stroke-linecap="round"/>${o.f?'<circle cx="37" cy="51" r="4" fill="#f9a8b8" opacity=".5"/><circle cx="63" cy="51" r="4" fill="#f9a8b8" opacity=".5"/>':''}`};
+const bubble=k=>`<svg viewBox="0 0 100 130" width="100%" style="overflow:visible;display:block"><g fill="#fff" stroke="#c4b5fd" stroke-width="2.5"><ellipse cx="50" cy="48" rx="46" ry="42"/><circle cx="30" cy="104" r="7"/><circle cx="22" cy="120" r="4"/></g><svg x="20" y="16" width="60" height="60" viewBox="22 6 56 56">${face(k)}</svg><use href="#hrt" x="68" y="8" width="16" height="14"/></svg>`;
+const phoneSvg=(k,sl)=>`<svg viewBox="0 0 34 60" width="100%" style="display:block;overflow:visible"><rect x="1" y="1" width="32" height="58" rx="6" fill="#0b0b14" stroke="#94a3b8" stroke-width="1.5"/><rect x="4" y="5" width="26" height="50" rx="3" fill="#1e3a5f"/><svg x="5" y="14" width="24" height="24" viewBox="22 6 56 56">${face(k,sl)}</svg><circle cx="17" cy="47" r="3" fill="#ef4444"/></svg>`;
+const bgNS=d=>{let s='';for(let i=0;i<(d?16:6);i++)s+=`<circle class="tw" cx="${R(335,425)}" cy="${R(58,150)}" r="${R(1,2)}" fill="#fff"/>`;
+return SV(`<defs><linearGradient id="nw1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b3170"/><stop offset="1" stop-color="#2e2250"/></linearGradient><clipPath id="nc1"><rect x="330" y="50" width="100" height="110"/></clipPath></defs><rect width="760" height="380" fill="url(#nw1)"/><rect y="300" width="760" height="80" fill="#4a3330"/>${[0,1,2,3].map(i=>`<rect y="${312+i*18}" width="760" height="1.5" fill="#33201f"/>`).join('')}<rect y="296" width="760" height="6" fill="#e9d5ff" opacity=".5"/><g clip-path="url(#nc1)"><rect x="330" y="50" width="100" height="110" fill="#0f1544"/>${s}<circle cx="${d?395:400}" cy="84" r="${d?20:14}" fill="#fff6c9"/>${d?'<circle cx="395" cy="84" r="34" fill="#fff6c9" opacity=".2"/>':''}</g><rect x="326" y="46" width="108" height="118" fill="none" stroke="#e9d5ff" stroke-width="7"/><path d="M380 50V160M330 105H430" stroke="#e9d5ff" stroke-width="4"/><path d="M312 36Q338 100 322 180H300Z" fill="#c084fc" opacity=".8"/><path d="M448 36Q422 100 438 180H460Z" fill="#c084fc" opacity=".8"/><rect x="196" y="100" width="54" height="68" fill="#fff" opacity=".9" stroke="#8b5a3c" stroke-width="4"/><circle cx="223" cy="124" r="11" fill="#fbcfe8"/><path d="M204 160Q223 132 242 160Z" fill="#a7f3d0"/><rect x="548" y="262" width="40" height="40" fill="#8b5a3c"/><path d="M554 218H582L588 254H548Z" fill="#fde68a"/><circle cx="568" cy="236" r="34" fill="#fde68a" opacity=".16"/><ellipse cx="380" cy="352" rx="130" ry="12" fill="#9d7bd8" opacity=".45"/>`)};
+const bgNE=d=>{let s='',b='';for(let i=0;i<(d?14:5);i++)s+=`<circle class="tw" cx="${R(335,425)}" cy="${R(58,100)}" r="${R(1,1.8)}" fill="#fff"/>`;
+for(let i=0;i<7;i++){const t=R(24,62);b+=`<rect x="${332+i*14}" y="${160-t}" width="12" height="${t}" fill="#1a2250"/><rect x="${335+i*14}" y="${166-t}" width="3" height="4" fill="#fde68a"/><rect x="${341+i*14}" y="${176-t}" width="3" height="4" fill="#fde68a"/>`}
+return SV(`<defs><linearGradient id="nw2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b5278"/><stop offset="1" stop-color="#1b2f4a"/></linearGradient><clipPath id="nc2"><rect x="330" y="50" width="100" height="110"/></clipPath></defs><rect width="760" height="380" fill="url(#nw2)"/><rect y="300" width="760" height="80" fill="#3d4a5c"/>${[0,1,2,3,4,5].map(i=>`<rect x="${i*140}" y="300" width="70" height="80" fill="#465469" opacity=".6"/>`).join('')}<rect y="296" width="760" height="6" fill="#cbd5e1" opacity=".4"/><g clip-path="url(#nc2)"><rect x="330" y="50" width="100" height="110" fill="#101a44"/>${s}<circle cx="352" cy="78" r="${d?18:12}" fill="#fff6c9"/>${d?'<circle cx="352" cy="78" r="32" fill="#fff6c9" opacity=".2"/>':''}${b}</g><rect x="326" y="46" width="108" height="118" fill="none" stroke="#cbd5e1" stroke-width="7"/><path d="M380 50V160M330 105H430" stroke="#cbd5e1" stroke-width="4"/><path d="M312 36H330V190H312ZM430 36H448V190H430Z" fill="#94a3b8" opacity=".6"/><rect x="196" y="96" width="14" height="64" fill="#f59e0b"/><rect x="214" y="96" width="14" height="64" fill="#14b8a6"/><rect x="232" y="96" width="14" height="64" fill="#e11d48"/><rect x="548" y="262" width="40" height="40" fill="#334155"/><path d="M554 218H582L588 254H548Z" fill="#fef3c7"/><circle cx="568" cy="236" r="34" fill="#fef3c7" opacity=".16"/><rect x="158" y="278" width="62" height="36" rx="6" fill="#b45309"/><path d="M178 278v-10h22v10" fill="none" stroke="#78350f" stroke-width="4"/><path d="M172 278v36M206 278v36" stroke="#78350f" stroke-width="3"/>`)};
+
+const nights=[];
+function LN(st){const W=st.clientWidth;if(!W)return;const H=st.clientHeight,bl=(W-230)/2,bt=H-148,q=s=>st.querySelector(s);
+  [q('.bed'),q('.bl')].forEach(e=>{e.style.left=bl+'px';e.style.top=bt+'px'});
+  const c=q('.ch');c.style.left=bl+52+'px';c.style.top=bt-46+'px';
+  const b=q('.bub');if(b){b.style.left=bl+34+'px';b.style.top=bt-108+'px'}
+  const p=q('.ph');if(p){const s=st.dataset.who=='s';p.style.left=bl+(s?16:34)+'px';p.style.top=bt-(s?30:52)+'px'}
+  st.querySelectorAll('.zz').forEach((z,i)=>{z.style.left=bl+96+i*14+'px';z.style.top=bt-8+'px'})}
+function nightStage(id,who,deep,o){
+  o=o||{};const st=$('#'+id),other=who=='s'?'e':'s';st.dataset.who=who;
+  st.insertAdjacentHTML('afterbegin',who=='s'?bgNS(deep):bgNE(deep));
+  st.insertAdjacentHTML('beforeend',`<div class="abs bed" style="z-index:1">${bedSvg(who)}</div><div class="ch" style="z-index:2"></div><div class="abs bl" style="z-index:3">${blSvg(who)}</div>${o.bub?`<div class="abs bub" style="width:96px;z-index:4">${bubble(other)}</div>`:''}${o.ph?`<div class="abs ph" style="width:${who=='s'?30:36}px;z-index:5">${phoneSvg(o.ph[0],o.ph[1])}</div>`:''}<div class="lab2">${who=='s'?'Sude’nin odası':'Enes’in otel odası'}</div>${o.awake?'':[0,1,2].map(i=>`<div class="abs serif zz" style="z-index:5;color:#c7d2fe;font-size:${15+i*5}px">Z</div>`).join('')}`);
+  const ch=st.querySelector('.ch'),bl=st.querySelector('.bl'),bub=st.querySelector('.bub'),ph=st.querySelector('.ph');
+  ch.innerHTML=person(CH[who],0);
+  if(!o.awake)ch.querySelectorAll('circle[r="2.3"]').forEach(c=>{const x=+c.getAttribute('cx');c.insertAdjacentHTML('afterend',`<path d="M${x-3} 44q3 3 6 0" stroke="#222" stroke-width="1.8" fill="none" stroke-linecap="round"/>`);c.remove()});
+  gsap.set(ch,{rotation:-90});
+  gsap.to(bl,{scaleY:1.05,transformOrigin:'50% 100%',duration:deep?3.4:2.4,yoyo:true,repeat:-1,ease:'sine.inOut'});
+  if(bub){gsap.to(bub,{y:-7,duration:2.4,yoyo:true,repeat:-1,ease:'sine.inOut'});
+    gsap.fromTo(bub,{filter:'drop-shadow(0 0 3px rgba(253,230,138,.4))'},{filter:deep?'drop-shadow(0 0 22px rgba(253,230,138,1))':'drop-shadow(0 0 8px rgba(253,230,138,.7))',duration:deep?1.6:2.4,yoyo:true,repeat:-1,ease:'sine.inOut'});
+    gsap.from(bub,{scale:0,opacity:0,transformOrigin:'25% 100%',duration:1.3,ease:'elastic.out(1,.55)',scrollTrigger:{trigger:st,start:'top 80%'}})}
+  if(ph){gsap.set(ph,{rotation:who=='s'?12:-8});gsap.fromTo(ph,{filter:'drop-shadow(0 0 6px #93c5fd)'},{filter:'drop-shadow(0 0 22px #bfdbfe)',duration:1.4,yoyo:true,repeat:-1,ease:'sine.inOut'})}
+  st.querySelectorAll('.zz').forEach((z,i)=>gsap.fromTo(z,{y:0,x:0,opacity:1},{y:-46,x:16,opacity:0,duration:2.6,repeat:-1,delay:i*.9,ease:'sine.out'}));
+  nights.push(st);LN(st);
+}
+nightStage('n1s','s',0,{bub:1});nightStage('n1e','e',0,{bub:1});
+nightStage('n3s','s',1,{ph:['e',0]});nightStage('n3e','e',1,{ph:['s',1],awake:1});
+$$('.tw').forEach(t=>gsap.to(t,{opacity:.15,duration:R(1,3),repeat:-1,yoyo:true,delay:R(0,2)}));
+
+/* ---------- Night 2: outfit panic ---------- */
+const dress=(x,c)=>`<g transform="translate(${x} 24)"><path d="M12 4L14 14L8 18L2 56H38L32 18L26 14L28 4L24 8Q20 12 16 8Z" fill="${c}" stroke="#fff" stroke-width="1.5"/><path d="M8 20Q20 26 32 20" stroke="#fff" stroke-width="1.5" fill="none" opacity=".7"/></g>`;
+const obSvg=`<svg viewBox="0 0 220 140" width="220" style="overflow:visible;display:block"><g fill="#fff" stroke="#c4b5fd" stroke-width="2.5"><ellipse cx="110" cy="62" rx="104" ry="56"/><circle cx="172" cy="122" r="8"/><circle cx="182" cy="136" r="5"/></g><g class="dr3">${dress(20,'#f472b6')}${dress(62,'#60a5fa')}${dress(104,'#a78bfa')}</g><text class="qm" x="166" y="90" font-size="56" font-weight="700" fill="#be123c" font-family="Playfair Display,Georgia,serif">?</text></svg>`;
+st5.insertAdjacentHTML('afterbegin',bgNS(0));
+st5.insertAdjacentHTML('beforeend',`<div class="abs bed" style="z-index:1">${bedSvg('s')}</div><div class="abs bl" style="z-index:3">${blSvg('s')}</div><div class="ch" id="sudeO" style="z-index:4"></div><div class="abs ob" style="width:220px;z-index:5">${obSvg}</div><div class="lab2">Sude’nin odası</div>`);
+$('#sudeO').innerHTML=person(CH.s,1);gsap.set('#st5 .bl',{scaleY:.35,transformOrigin:'50% 100%'});
+function LO(){const W=st5.clientWidth;if(!W)return;const g=G(st5),off=Math.max(0,(W-360)/2),q=s=>st5.querySelector(s);
+  [q('.bed'),q('.bl')].forEach(e=>{e.style.left=8+off+'px';e.style.top=g.gy-105+'px'});
+  const c=q('#sudeO');c.style.left=off+255+'px';c.style.top=g.gy-154+'px';const ob=q('.ob');ob.style.left=off+122+'px';ob.style.top=g.gy-282+'px'}
+ScrollTrigger.create({trigger:'#st5',start:'top 75%',once:true,onEnter:()=>{const c=$('#sudeO');
+  gsap.from('#st5 .ob',{scale:0,opacity:0,transformOrigin:'80% 100%',duration:1.1,ease:'elastic.out(1,.55)'});
+  gsap.to(c,{rotation:4,transformOrigin:'50% 100%',duration:.22,yoyo:true,repeat:-1,ease:'sine.inOut'});
+  [['.aL','29 78'],['.aR','70 78']].forEach(([q,o],i)=>gsap.fromTo(c.querySelector(q),{rotation:-25,svgOrigin:o},{rotation:25,svgOrigin:o,duration:.3,yoyo:true,repeat:-1,delay:i*.15,ease:'sine.inOut'}));
+  gsap.to('#st5 .dr3 g',{y:'-=7',stagger:.15,duration:.3,yoyo:true,repeat:-1});
+  gsap.to('#st5 .qm',{scale:1.25,svgOrigin:'178 70',duration:.5,yoyo:true,repeat:-1})}});
+
+/* ---------- Layout ---------- */
+function LP(){const W=stP.clientWidth;if(!W)return;const g=G(stP);put(sP,W*.26,g.gy);put(eP,W*.26+66,g.gy);
+  if(!clouds.length)for(let i=0;i<4;i++){const el=document.createElement('div');el.className='abs';el.style.cssText='left:0;top:0;width:96px;z-index:6;cursor:pointer;touch-action:manipulation';el.innerHTML=cloudSvg;stP.appendChild(el);
+    const c={el,x:R(0,W-96),y:R(10,g.H*.5),vx:R(60,110)*(i%2?1:-1),vy:R(40,80)*(i<2?1:-1)};clouds.push(c);gsap.set(el,{x:c.x,y:c.y});el.addEventListener('pointerdown',e=>{e.preventDefault();pop(c)})}}
+function relayout(){if(!run.a)L1();if(!run.b)L2();if(!run.c)L3();if(!run.d)L4();LO();LP();nights.forEach(LN)}
+const clouds=[];
+relayout();addEventListener('resize',relayout);addEventListener('load',relayout);
 $$('.cl').forEach((c,i)=>gsap.to(c,{x:'+='+(30+i*10),duration:6+i,yoyo:true,repeat:-1,ease:'sine.inOut'}));
 gsap.to('#pulse',{scale:1.5,opacity:0,svgOrigin:'0 -2',duration:1.4,repeat:-1});
 $$('.wv').forEach(w=>gsap.to(w,{x:R(10,20)*(Math.random()>.5?1:-1),duration:R(2,3.5),yoyo:true,repeat:-1,ease:'sine.inOut'}));
 gsap.to('.bt',{x:'+=90',duration:14,yoyo:true,repeat:-1,ease:'sine.inOut'});
-$$('.gl').forEach(g=>{gsap.to(g,{x:'+='+R(60,120),y:'+='+R(-14,14),duration:R(5,8),yoyo:true,repeat:-1,ease:'sine.inOut'})});
+$$('.gl').forEach(g=>gsap.to(g,{x:'+='+R(60,120),y:'+='+R(-14,14),duration:R(5,8),yoyo:true,repeat:-1,ease:'sine.inOut'}));
 
-/* intro + reveals */
+/* ---------- Intro, text reveals ---------- */
 gsap.from('#title',{opacity:0,y:30,duration:1.4,delay:.2});
-gsap.from('#cards .card',{opacity:0,y:50,stagger:.18,duration:.8,scrollTrigger:{trigger:'#cards',start:'top 90%'}});
+gsap.from('#cards .card',{opacity:0,y:50,stagger:.18,duration:.8,scrollTrigger:{trigger:'#cards',start:'top 92%'}});
 gsap.to('#hint svg',{y:8,repeat:-1,yoyo:true,duration:.7});
 $$('.reveal').forEach(el=>gsap.from(el,{opacity:0,y:40,duration:.9,scrollTrigger:{trigger:el,start:'top 92%'}}));
+$$('.tx').forEach(el=>{el.innerHTML=el.dataset.t.split(' ').map(w=>`<span style="display:inline-block;opacity:0;transform:translateY(10px)">${w}</span>`).join(' ');
+  gsap.to(el.children,{opacity:1,y:0,stagger:.045,duration:.5,scrollTrigger:{trigger:el,start:'top 92%'}})});
+function unlock(id){const g=$('#'+id);g.style.display='block';relayout();ScrollTrigger.refresh();gsap.from(g,{opacity:0,duration:1});
+  gsap.delayedCall(.15,()=>g.firstElementChild.scrollIntoView({behavior:'smooth',block:'start'}))}
 
 /* ---------- Scene 1 ---------- */
 const cap1=$('#cap1');
@@ -291,14 +358,6 @@ $('#b-hug').onclick=function(){
     .to([s3,e3],{y:-8,duration:.18,yoyo:true,repeat:1},'touch');
 };
 
-/* ---------- Scene 3: Bosphorus ---------- */
-$('#b-walk').onclick=function(){
-  run.c=1;this.disabled=true;const g=G(stB),fx=g.W*.62-cx(sb),a=walk(sb),b=walk(eb);
-  const hs=gsap.to({},{duration:.28,repeat:-1,onRepeat(){fh(stB,(cx(sb)+cx(eb))/2-12,g.gy-175,R(14,26),R(70,130))}});
-  gsap.timeline({onComplete:()=>{$('#cap3').textContent='Birlikte geçen en güzel gün.';for(let i=0;i<8;i++)gsap.delayedCall(i*.12,()=>fh(stB,(cx(sb)+cx(eb))/2+R(-40,40),g.gy-175,R(16,28),R(70,130)))}})
-    .to([sb,eb],{x:'+='+fx,duration:Math.max(6,fx/70),ease:'sine.inOut'}).call(()=>{a();b();hs.kill()});
-};
-
 /* ---------- Scene 4: farewell ---------- */
 $('#b-home').onclick=function(){
   run.d=1;this.disabled=true;const g=G(st4),cap=$('#cap4'),ws=wave(s4),we=wave(e4);cap.textContent='Veda zamanı...';
@@ -311,79 +370,74 @@ $('#b-home').onclick=function(){
       })})});
 };
 
-/* ---------- Scene 5: video call ---------- */
-const call=$('#call'),ph1=$('#ph1'),ph2=$('#ph2'),txt='Ben döndüm ama artık geceleri uyku düzenin harika. İkimizin de aklında sadece bir sonraki buluşmamız var...';
-$('#callText').innerHTML=txt.split(' ').map(w=>`<span class="w" style="display:inline-block;opacity:0;transform:translateY(10px)">${w}</span>`).join(' ');
-function cross(a,b){
-  const c=call.getBoundingClientRect(),A=a.getBoundingClientRect(),B=b.getBoundingClientRect(),x0=A.left+A.width/2-c.left,y0=A.top+A.height/2-c.top,dx=B.left+B.width/2-c.left-x0,dy=B.top+B.height/2-c.top-y0,L=Math.hypot(dx,dy),nx=-dy/L,ny=dx/L,arc=R(-70,70),z=R(.7,1.4),o={t:0};
-  const h=document.createElement('div');h.className='abs glow';h.style.cssText='left:0;top:0;width:26px;z-index:20;pointer-events:none;opacity:0';h.innerHTML='<svg viewBox="0 0 100 90" width="100%"><use href="#hrt"/></svg>';call.appendChild(h);
-  gsap.to(o,{t:1,duration:R(2.2,3),ease:'none',onComplete:()=>h.remove(),onUpdate(){const t=o.t,k=Math.sin(Math.PI*t);gsap.set(h,{x:x0+dx*t+nx*arc*k-13,y:y0+dy*t+ny*arc*k-12,scale:z*(.6+.6*k),opacity:Math.min(1,t*6,(1-t)*4)})}});
-}
-$('#b-call').onclick=function(){
-  this.disabled=true;let n=0;
-  gsap.timeline()
-    .fromTo('.rg',{scale:1,opacity:.9},{scale:2.8,opacity:0,duration:1,repeat:2,stagger:.3,ease:'power1.out'})
-    .to('.cov',{opacity:0,duration:.8,onComplete:()=>$$('.cov').forEach(c=>c.style.display='none')})
-    .fromTo('.pch',{y:50,opacity:0},{y:0,opacity:1,duration:.9,ease:'back.out(1.6)',stagger:.2},'-=.3')
-    .call(()=>{setHB(100);$$('.pch').forEach(p=>wave(p));gsap.to({},{duration:.45,repeat:-1,onRepeat:()=>{n++%2?cross(ph1,ph2):cross(ph2,ph1)}})})
-    .to('.w',{opacity:1,y:0,stagger:.07,duration:.5},'+=.8');
-};
 
-/* ---------- Night scenes ---------- */
-const bedSvg=w=>{const s=w=='s';return `<svg viewBox="0 0 230 110" width="230" height="110" style="display:block"><rect x="2" y="${s?16:6}" width="12" height="${s?94:104}" rx="3" fill="${s?'#8b5a3c':'#475569'}"/><rect x="0" y="64" width="230" height="26" rx="4" fill="${s?'#9a6340':'#334155'}"/><rect x="6" y="88" width="8" height="22" fill="${s?'#7a4a2e':'#1e293b'}"/><rect x="216" y="88" width="8" height="22" fill="${s?'#7a4a2e':'#1e293b'}"/><rect x="10" y="48" width="210" height="22" rx="8" fill="${s?'#f5ece4':'#f8fafc'}"/><rect x="14" y="36" width="50" height="20" rx="10" fill="#fff"/></svg>`};
-const blSvg=w=>{const s=w=='s',a=s?'#f472b6':'#64748b',b=s?'#ec4899':'#475569';return `<svg viewBox="0 0 230 110" width="230" height="110" style="display:block"><path d="M66 36Q72 28 96 30L214 33Q228 35 228 50V74H66Z" fill="${a}"/><path d="M66 36Q72 28 96 30L110 74H66Z" fill="${b}"/><path d="M150 32V74M190 33V74" stroke="#fff" stroke-width="3" opacity=".5"/></svg>`};
-const face=k=>{const o=CH[k],hr=o.f?'M27 52C19 14 38 7 50 7C64 7 81 14 73 52L68 53C68 37 62 28 50 28C38 28 32 37 32 53Z':'M29 40C26 15 41 8 52 10C67 12 76 21 71 40C67 29 58 25 48 27C40 30 34 31 29 40Z';
-  return `<circle cx="30" cy="44" r="4" fill="${o.skin}"/><circle cx="70" cy="44" r="4" fill="${o.skin}"/><circle cx="50" cy="42" r="20" fill="${o.skin}"/><path d="${hr}" fill="${o.hc}"/><circle cx="43" cy="44" r="2.3" fill="#222"/><circle cx="57" cy="44" r="2.3" fill="#222"/><path d="M43 51Q50 58 57 51" fill="none" stroke="#a24b4b" stroke-width="2" stroke-linecap="round"/>${o.f?'<circle cx="37" cy="51" r="4" fill="#f9a8b8" opacity=".5"/><circle cx="63" cy="51" r="4" fill="#f9a8b8" opacity=".5"/>':''}`};
-const bubble=k=>`<svg viewBox="0 0 100 130" width="100%" style="overflow:visible;display:block"><g fill="#fff" stroke="#c4b5fd" stroke-width="2.5"><ellipse cx="50" cy="48" rx="46" ry="42"/><circle cx="30" cy="104" r="7"/><circle cx="22" cy="120" r="4"/></g><svg x="20" y="16" width="60" height="60" viewBox="22 6 56 56">${face(k)}</svg><use href="#hrt" x="68" y="8" width="16" height="14"/></svg>`;
-const bgNS=d=>{let s='';for(let i=0;i<(d?16:6);i++)s+=`<circle class="tw" cx="${R(335,425)}" cy="${R(58,150)}" r="${R(1,2)}" fill="#fff"/>`;
-return SV(`<defs><linearGradient id="nw1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b3170"/><stop offset="1" stop-color="#2e2250"/></linearGradient><clipPath id="nc1"><rect x="330" y="50" width="100" height="110"/></clipPath></defs><rect width="760" height="380" fill="url(#nw1)"/><rect y="300" width="760" height="80" fill="#4a3330"/>${[0,1,2,3].map(i=>`<rect y="${312+i*18}" width="760" height="1.5" fill="#33201f"/>`).join('')}<rect y="296" width="760" height="6" fill="#e9d5ff" opacity=".5"/><g clip-path="url(#nc1)"><rect x="330" y="50" width="100" height="110" fill="#0f1544"/>${s}<circle cx="${d?395:400}" cy="84" r="${d?20:14}" fill="#fff6c9"/>${d?'<circle cx="395" cy="84" r="34" fill="#fff6c9" opacity=".2"/>':''}</g><rect x="326" y="46" width="108" height="118" fill="none" stroke="#e9d5ff" stroke-width="7"/><path d="M380 50V160M330 105H430" stroke="#e9d5ff" stroke-width="4"/><path d="M312 36Q338 100 322 180H300Z" fill="#c084fc" opacity=".8"/><path d="M448 36Q422 100 438 180H460Z" fill="#c084fc" opacity=".8"/><rect x="196" y="100" width="54" height="68" fill="#fff" opacity=".9" stroke="#8b5a3c" stroke-width="4"/><circle cx="223" cy="124" r="11" fill="#fbcfe8"/><path d="M204 160Q223 132 242 160Z" fill="#a7f3d0"/><rect x="548" y="262" width="40" height="40" fill="#8b5a3c"/><path d="M554 218H582L588 254H548Z" fill="#fde68a"/><circle cx="568" cy="236" r="34" fill="#fde68a" opacity=".16"/><ellipse cx="380" cy="352" rx="130" ry="12" fill="#9d7bd8" opacity=".45"/>`)};
-const bgNE=d=>{let s='',b='';for(let i=0;i<(d?14:5);i++)s+=`<circle class="tw" cx="${R(335,425)}" cy="${R(58,100)}" r="${R(1,1.8)}" fill="#fff"/>`;
-for(let i=0;i<7;i++){const t=R(24,62);b+=`<rect x="${332+i*14}" y="${160-t}" width="12" height="${t}" fill="#1a2250"/><rect x="${335+i*14}" y="${166-t}" width="3" height="4" fill="#fde68a"/><rect x="${341+i*14}" y="${176-t}" width="3" height="4" fill="#fde68a"/>`}
-return SV(`<defs><linearGradient id="nw2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b5278"/><stop offset="1" stop-color="#1b2f4a"/></linearGradient><clipPath id="nc2"><rect x="330" y="50" width="100" height="110"/></clipPath></defs><rect width="760" height="380" fill="url(#nw2)"/><rect y="300" width="760" height="80" fill="#3d4a5c"/>${[0,1,2,3,4,5].map(i=>`<rect x="${i*140}" y="300" width="70" height="80" fill="#465469" opacity=".6"/>`).join('')}<rect y="296" width="760" height="6" fill="#cbd5e1" opacity=".4"/><g clip-path="url(#nc2)"><rect x="330" y="50" width="100" height="110" fill="#101a44"/>${s}<circle cx="352" cy="78" r="${d?18:12}" fill="#fff6c9"/>${d?'<circle cx="352" cy="78" r="32" fill="#fff6c9" opacity=".2"/>':''}${b}</g><rect x="326" y="46" width="108" height="118" fill="none" stroke="#cbd5e1" stroke-width="7"/><path d="M380 50V160M330 105H430" stroke="#cbd5e1" stroke-width="4"/><path d="M312 36H330V190H312ZM430 36H448V190H430Z" fill="#94a3b8" opacity=".6"/><rect x="196" y="96" width="14" height="64" fill="#f59e0b"/><rect x="214" y="96" width="14" height="64" fill="#14b8a6"/><rect x="232" y="96" width="14" height="64" fill="#e11d48"/><rect x="548" y="262" width="40" height="40" fill="#334155"/><path d="M554 218H582L588 254H548Z" fill="#fef3c7"/><circle cx="568" cy="236" r="34" fill="#fef3c7" opacity=".16"/><rect x="158" y="278" width="62" height="36" rx="6" fill="#b45309"/><path d="M178 278v-10h22v10" fill="none" stroke="#78350f" stroke-width="4"/><path d="M172 278v36M206 278v36" stroke="#78350f" stroke-width="3"/>`)};
-const nights=[];
-function LN(st){const W=st.clientWidth,H=st.clientHeight,bl=(W-230)/2,bt=H-148,q=s=>st.querySelector(s);
-  [q('.bed'),q('.bl')].forEach(e=>{e.style.left=bl+'px';e.style.top=bt+'px'});
-  const c=q('.ch');c.style.left=bl+52+'px';c.style.top=bt-46+'px';
-  const b=q('.bub');b.style.left=bl+34+'px';b.style.top=bt-108+'px';
-  st.querySelectorAll('.zz').forEach((z,i)=>{z.style.left=bl+96+i*14+'px';z.style.top=bt-8+'px'})}
-function nightStage(id,who,deep){
-  const st=$('#'+id),o=who=='s'?'e':'s';
-  st.insertAdjacentHTML('afterbegin',who=='s'?bgNS(deep):bgNE(deep));
-  st.insertAdjacentHTML('beforeend',`<div class="abs bed" style="z-index:1">${bedSvg(who)}</div><div class="ch" style="z-index:2"></div><div class="abs bl" style="z-index:3">${blSvg(who)}</div><div class="abs bub" style="width:96px;z-index:4">${bubble(o)}</div><div class="lab2">${who=='s'?'Sude’nin odası':'Enes’in otel odası'}</div>${[0,1,2].map(i=>`<div class="abs serif zz" style="z-index:5;color:#c7d2fe;font-size:${15+i*5}px">Z</div>`).join('')}`);
-  const ch=st.querySelector('.ch'),bl=st.querySelector('.bl'),bub=st.querySelector('.bub');
-  ch.innerHTML=person(CH[who],0);
-  ch.querySelectorAll('circle[r="2.3"]').forEach(c=>{const x=+c.getAttribute('cx');c.insertAdjacentHTML('afterend',`<path d="M${x-3} 44q3 3 6 0" stroke="#222" stroke-width="1.8" fill="none" stroke-linecap="round"/>`);c.remove()});
-  gsap.set(ch,{rotation:-90});
-  gsap.to(bl,{scaleY:1.05,transformOrigin:'50% 100%',duration:deep?3.4:2.4,yoyo:true,repeat:-1,ease:'sine.inOut'});
-  gsap.to(bub,{y:-7,duration:2.4,yoyo:true,repeat:-1,ease:'sine.inOut'});
-  gsap.fromTo(bub,{filter:'drop-shadow(0 0 3px rgba(253,230,138,.4))'},{filter:deep?'drop-shadow(0 0 22px rgba(253,230,138,1))':'drop-shadow(0 0 8px rgba(253,230,138,.7))',duration:deep?1.6:2.4,yoyo:true,repeat:-1,ease:'sine.inOut'});
-  gsap.from(bub,{scale:0,opacity:0,transformOrigin:'25% 100%',duration:1.3,ease:'elastic.out(1,.55)',scrollTrigger:{trigger:st,start:'top 80%'}});
-  st.querySelectorAll('.zz').forEach((z,i)=>gsap.fromTo(z,{y:0,x:0,opacity:1},{y:-46,x:16,opacity:0,duration:2.6,repeat:-1,delay:i*.9,ease:'sine.out'}));
-  nights.push(st);LN(st);
-}
-nightStage('n1s','s',0);nightStage('n1e','e',0);nightStage('n2s','s',1);nightStage('n2e','e',1);
-$$('.tw').forEach(t=>gsap.to(t,{opacity:.15,duration:R(1,3),repeat:-1,yoyo:true,delay:R(0,2)}));
-addEventListener('resize',()=>nights.forEach(LN));
-addEventListener('load',()=>dispatchEvent(new Event('resize')));
-[['tn1','Gördün mü? Kafandaki karmaşa gidince ilk gece ne kadar rahat ve deliksiz uyudun...'],['tn2','İkinci gece... Geçmişin yükü tamamen kalktı, zihnin ve kalbin artık yorgun değil.']].forEach(([id,t])=>{
-  const el=$('#'+id);el.innerHTML=t.split(' ').map(w=>`<span class="nw" style="display:inline-block;opacity:0;transform:translateY(10px)">${w}</span>`).join(' ');
-  gsap.to(el.querySelectorAll('.nw'),{opacity:1,y:0,stagger:.08,duration:.5,scrollTrigger:{trigger:el,start:'top 88%'}})});
+/* ---------- Scene 4: Bosphorus game ---------- */
+const gs={n:0,on:false,done:false},gcEl=$('#gc');
+function spawn(){if(!gs.on)return;const W=stB.clientWidth,H=stB.clientHeight,heart=Math.random()<.68,sz=R(32,48),d=document.createElement('div');
+  d.className='abs glow fl';d.style.cssText=`left:${R(8,Math.max(10,W-sz-8))}px;top:-50px;width:${sz}px;z-index:9;cursor:pointer;touch-action:manipulation`;
+  d.innerHTML=heart?'<svg viewBox="0 0 100 90" width="100%"><use href="#hrt"/></svg>':'<svg viewBox="0 0 24 24" width="100%"><path d="M12 1l3.1 7 7.4.7-5.6 5 1.7 7.3L12 17.2 5.4 21l1.7-7.3-5.6-5 7.4-.7z" fill="#fde047" stroke="#f59e0b"/></svg>';
+  stB.appendChild(d);const tw=gsap.to(d,{y:H+90,x:R(-40,40),rotation:R(-40,40),duration:R(3,4.6),ease:'none',onComplete:()=>d.remove()});
+  d.addEventListener('pointerdown',e=>{e.preventDefault();if(d._c||!gs.on)return;d._c=1;tw.kill();catchIt(d,heart)})}
+function catchIt(d,heart){const r=d.getBoundingClientRect(),sr=stB.getBoundingClientRect(),x=r.left-sr.left+r.width/2,y=r.top-sr.top+r.height/2;
+  for(let i=0;i<8;i++){const p=document.createElement('div');p.className='abs';p.style.cssText=`left:${x}px;top:${y}px;width:8px;height:8px;border-radius:50%;background:${heart?'#fb7185':'#fde047'};z-index:12;pointer-events:none`;stB.appendChild(p);const a=R(0,6.28),rr=R(24,56);gsap.to(p,{x:Math.cos(a)*rr,y:Math.sin(a)*rr,opacity:0,duration:.6,onComplete:()=>p.remove()})}
+  gsap.to(d,{scale:1.6,opacity:0,duration:.25,onComplete:()=>d.remove()});
+  if(heart){gs.n++;gcEl.textContent=`Kalpler: ${gs.n}/10`;gsap.fromTo(gcEl,{scale:1.25},{scale:1,duration:.3});if(gs.n>=10)finish()}}
+function finish(){gs.on=false;gs.done=true;gs.t.kill();$$('#st3 .fl').forEach(e=>{gsap.killTweensOf(e);e.remove()});
+  const gm=$('#gm');gm.style.display='flex';gsap.fromTo(gm.firstElementChild,{scale:0,opacity:0},{scale:1,opacity:1,duration:.9,ease:'elastic.out(1,.6)'});
+  for(let i=0;i<10;i++)gsap.delayedCall(i*.1,()=>fh(stB,R(20,stB.clientWidth-40),stB.clientHeight*.7,R(18,30),R(80,160)));
+  $('#cap3').textContent='Tüm sevgi toplandı. Devamı açıldı!';gsap.delayedCall(2.4,()=>unlock('gA'))}
+function startGame(){if(gs.on||gs.done)return;gs.on=true;run.c=1;$('#cap3').textContent='Düşen kalplere dokun!';
+  const g=G(stB),fx=g.W*.62-cx(sb),a=walk(sb),b=walk(eb);
+  gsap.to([sb,eb],{x:'+='+fx,duration:11,ease:'sine.inOut',onComplete:()=>{a();b()}});
+  gs.t=gsap.to({},{duration:.55,repeat:-1,onRepeat:spawn})}
+ScrollTrigger.create({trigger:'#st3',start:'top 60%',once:true,onEnter:startGame});
 
-/* ---------- Happiness bar ---------- */
-const hbf=$('#hbf'),hbp=$('#hbp'),hv={v:10};
-function setHB(v){
-  gsap.to(hv,{v,duration:1.1,ease:'power2.out',overwrite:true,onUpdate(){hbf.style.width=hv.v+'%';hbp.textContent=Math.round(hv.v)+'%'},onComplete(){hbp.textContent=v>=100?'MAX':Math.round(v)+'%'}});
-  gsap.to(hbf,{boxShadow:v>=100?'0 0 16px 3px #fde68a':'0 0 0 0 rgba(253,230,138,0)',duration:.6})}
-[['#intro',10],['#s1',20],['#s2',32],['#n1',48],['#s3',62],['#n2',76],['#s4',90],['#s5',100]].forEach(([id,v])=>ScrollTrigger.create({trigger:id,start:'top 55%',end:'bottom 55%',onEnter:()=>setHB(v),onEnterBack:()=>setHB(v)}));
+/* ---------- Scene 6: stress clouds ---------- */
+const cloudSvg='<svg viewBox="0 0 100 70" width="100%" style="display:block"><g fill="#3b3f55"><ellipse cx="50" cy="40" rx="42" ry="18"/><ellipse cx="30" cy="30" rx="22" ry="18"/><ellipse cx="60" cy="24" rx="26" ry="20"/></g><path d="M34 26l12 6M74 20l-12 6" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="42" cy="36" r="3" fill="#fff"/><circle cx="62" cy="32" r="3" fill="#fff"/><path d="M44 48q10-8 20 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M50 58l-4 9M60 58l-2 9" stroke="#93c5fd" stroke-width="2.5" stroke-linecap="round"/></svg>';
+const SUN='<svg viewBox="0 0 40 40" width="100%"><g stroke="#f59e0b" stroke-width="3" stroke-linecap="round">'+[0,45,90,135,180,225,270,315].map(a=>`<line x1="20" y1="3" x2="20" y2="9" transform="rotate(${a} 20 20)"/>`).join('')+'</g><circle cx="20" cy="20" r="9" fill="#fcd34d"/></svg>';
+let parkN=0;
+gsap.ticker.add((t,dt)=>{const W=stP.clientWidth;if(!W)return;const H=stP.clientHeight;clouds.forEach(c=>{if(c.dead)return;c.x+=c.vx*dt/1000;c.y+=c.vy*dt/1000;
+  if(c.x<0||c.x>W-96){c.vx*=-1;c.x=Math.max(0,Math.min(W-96,c.x))}if(c.y<8||c.y>H*.5){c.vy*=-1;c.y=Math.max(8,Math.min(H*.5,c.y))}gsap.set(c.el,{x:c.x,y:c.y})})});
+function pop(c){if(c.dead)return;c.dead=1;const px=c.x+48,py=c.y+35;
+  for(let i=0;i<9;i++){const d=document.createElement('div');d.className='abs';d.style.cssText=`left:${px}px;top:${py}px;width:${R(20,32)}px;z-index:9;pointer-events:none`;d.innerHTML=i%2?SUN:'<svg viewBox="0 0 100 90" width="100%"><use href="#hrt"/></svg>';stP.appendChild(d);
+    const a=R(0,6.28),r=R(50,110);gsap.fromTo(d,{scale:.3,opacity:1},{scale:1.2,x:Math.cos(a)*r,y:Math.sin(a)*r-30,duration:.9,ease:'power2.out'});gsap.to(d,{opacity:0,delay:.8,duration:.6,onComplete:()=>d.remove()})}
+  gsap.to(c.el,{scale:1.4,opacity:0,duration:.3,onComplete:()=>c.el.remove()});
+  parkN++;$('#gc6').textContent=`Bulut: ${parkN}/4`;
+  if(parkN>=4){$('#cap6').textContent='Hepsi gitti! Kafan hafifledi, gökyüzü açıldı.';gsap.delayedCall(2,()=>unlock('gB'))}}
 
-/* ---------- Footer ---------- */
-const sc=$('#stars');
-for(let i=0;i<60;i++){const s=document.createElement('span');s.className='star';s.style.left=R(0,100)+'%';s.style.top=R(0,100)+'%';sc.appendChild(s);gsap.to(s,{opacity:.15,duration:R(1,3),repeat:-1,yoyo:true,delay:R(0,2)})}
-let sk='<svg viewBox="0 0 760 120" preserveAspectRatio="none" width="100%" height="120">';
-for(let x=0;x<760;x+=38){const h=R(40,100);sk+=`<rect x="${x}" y="${120-h}" width="36" height="${h}" fill="#0d1033"/>`;for(let y=120-h+8;y<112;y+=14)if(Math.random()>.6)sk+=`<rect x="${x+8+(Math.random()>.5?14:0)}" y="${y}" width="6" height="7" fill="#fde68a" opacity=".8"/>`}
-$('#sky').innerHTML=sk+'</svg>';
+/* ---------- Scene 9: final choice ---------- */
+const amb=$('#amb');
+for(let i=0;i<14;i++){const d=document.createElement('div');d.style.cssText=`position:absolute;left:${R(0,100)}%;top:${R(0,100)}%;width:${R(30,90)}px;height:${R(30,90)}px;border-radius:50%;background:radial-gradient(circle,rgba(251,113,133,.35),transparent 70%)`;amb.appendChild(d);gsap.to(d,{y:R(-30,30),x:R(-20,20),opacity:R(.3,.9),duration:R(3,6),yoyo:true,repeat:-1,ease:'sine.inOut'})}
+let ambT;ScrollTrigger.create({trigger:'#s9',start:'top 70%',end:'bottom top',onToggle:t=>{if(t.isActive)ambT=gsap.to({},{duration:.7,repeat:-1,onRepeat:()=>fh(amb,R(0,amb.clientWidth-30),amb.clientHeight-30,R(14,28),amb.clientHeight*.7)});else if(ambT)ambT.kill()}});
 gsap.to('#h5',{scale:1.2,repeat:-1,yoyo:true,duration:.6,ease:'sine.inOut'});
 gsap.to('#msg',{boxShadow:'0 0 70px rgba(251,113,133,.6)',repeat:-1,yoyo:true,duration:1.6,ease:'sine.inOut'});
+const res=$('#res');
+function say(t){gsap.fromTo(res,{opacity:0,y:10},{opacity:1,y:0,duration:.6});res.textContent=t}
+function confetti(){const cols=['#fb7185','#fde047','#4ade80','#60a5fa','#c084fc','#fff'];
+  [0,.5].forEach(dl=>gsap.delayedCall(dl,()=>{for(let i=0;i<90;i++){const d=document.createElement('div');d.style.cssText='position:fixed;left:50%;top:55%;z-index:100;pointer-events:none';
+    d.innerHTML=i%2?`<svg viewBox="0 0 100 90" width="${R(14,30)}"><use href="#hrt"/></svg>`:`<div style="width:${R(6,12)}px;height:${R(10,18)}px;background:${cols[i%6]}"></div>`;document.body.appendChild(d);
+    const x=R(-innerWidth*.5,innerWidth*.5);gsap.timeline({onComplete:()=>d.remove()}).to(d,{x,y:-R(innerHeight*.15,innerHeight*.6),rotation:R(-360,360),scale:1.2,duration:R(.6,1),ease:'power2.out'}).to(d,{y:innerHeight*.5,x:x+R(-80,80),rotation:'+='+R(-360,360),opacity:0,duration:R(1.6,2.8),ease:'power1.in'})}}))}
+$('#b-yes').onclick=()=>{confetti();const b=$('#msgbody');gsap.to(b,{opacity:0,duration:.4,onComplete:()=>{b.innerHTML='<p class="serif" style="font-size:clamp(24px,5vw,38px);color:#fde68a;font-style:normal">Hadi planlama yapalım!</p>';gsap.to(b,{opacity:1,duration:.6})}});res.textContent=''};
+$('#b-think').onclick=()=>say('Tamam, hadi gel konuşalım...');
+const no=$('#b-no'),arena=$('#arena'),TIPS=['İstediğini biliyorum :)','Hadi ya lütfen...','Bence yanlış butona basıyorsun...','Naz yapma :)','Emin misin?'];
+let tries=0,ox=null,oy=null,busy=false;
+function dodge(e){if(e&&e.preventDefault)e.preventDefault();if(no.style.display==='none'||busy)return;busy=true;
+  if(ox===null){ox=no.offsetLeft;oy=no.offsetTop}
+  tries++;const sc=Math.max(0,+(1-.2*tries).toFixed(2)),aw=arena.clientWidth,ah=arena.clientHeight,bw=no.offsetWidth,bh=no.offsetHeight,tx=R(0,Math.max(0,aw-bw)),ty=R(0,Math.max(0,ah-bh));
+  gsap.to(no,{x:tx-ox,y:ty-oy,scale:sc,duration:.4,ease:'back.out(1.6)',onComplete:()=>{busy=false;if(sc<=0)no.style.display='none'}});
+  const tp=document.createElement('div');tp.className='tipb';tp.textContent=TIPS[Math.floor(Math.random()*TIPS.length)];arena.appendChild(tp);
+  const lx=Math.max(70,Math.min(aw-70,tx+bw/2));tp.style.left=lx+'px';tp.style.top=(ty>46?ty-44:ty+bh+8)+'px';
+  gsap.fromTo(tp,{scale:0,opacity:0,xPercent:-50},{scale:1,opacity:1,xPercent:-50,duration:.35,ease:'back.out(2)'});gsap.to(tp,{opacity:0,y:-10,delay:1.5,duration:.5,onComplete:()=>tp.remove()})}
+['mouseover','touchstart','click','pointerenter'].forEach(ev=>no.addEventListener(ev,dodge,{passive:false}));
+
+/* ---------- Happiness bar + scene backgrounds ---------- */
+const hbf=$('#hbf'),hbp=$('#hbp'),hv={v:10},TH={a:'#fff1f2',b:'#ece6ff',ink:'#4a2c3b',soft:'#8b5a6f'};
+function setHB(v){gsap.to(hv,{v,duration:1.1,ease:'power2.out',overwrite:true,onUpdate(){hbf.style.width=hv.v+'%';hbp.textContent=Math.round(hv.v)+'%'},onComplete(){hbp.textContent=v>=100?'MAX':Math.round(v)+'%'}});
+  gsap.to(hbf,{boxShadow:v>=100?'0 0 16px 3px #fde68a':'0 0 0 0 rgba(253,230,138,0)',duration:.6})}
+function theme(t){gsap.to(TH,{a:t[0],b:t[1],ink:t[2],soft:t[3],duration:1.4,overwrite:true,ease:'power1.inOut',onUpdate(){$('#bgfx').style.background=`linear-gradient(180deg,${TH.a},${TH.b})`;const r=document.documentElement.style;r.setProperty('--ink',TH.ink);r.setProperty('--soft',TH.soft)}})}
+const LT=['#fde7f1','#e9b6cf'];
+[['#intro',10,['#fff1f2','#ece6ff','#4a2c3b','#8b5a6f']],['#s1',18,['#7dd3fc','#fde7d3','#1e3a5f','#35607f']],['#s2',28,['#f3dcc2','#d9b08a','#4a2c1e','#7a5238']],['#n1',38,['#141a3d','#2a2a6b',...LT]],['#s3',50,['#8fd3ff','#ffe9c9','#1e3a5f','#35607f']],['#n2',62,['#1d1a4a','#3a2468',...LT]],['#s6',72,['#bfe8a8','#f6f0b0','#2c4a2a','#476a3f']],['#n3',82,['#0f1236','#241d5c',...LT]],['#s8',90,['#2d1b5e','#e2557a','#fff3e8','#ffd9c0']],['#s9',100,['#2a0f3a','#5a1546','#fde7f1','#f9a8d4']]]
+  .forEach(([id,v,t])=>ScrollTrigger.create({trigger:id,start:'top 55%',end:'bottom 55%',onEnter:()=>{setHB(v);theme(t)},onEnterBack:()=>{setHB(v);theme(t)}}));
 </script>
 </body>
 </html>
